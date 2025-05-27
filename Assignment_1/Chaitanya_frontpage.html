@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaitanya Nitawe — Profile</title>
+  <style>
+    :root {
+      --bg-dark-blue: #1565c0;
+      --circle-blue: #90caf9;
+      --accent-blue: #bbdefb;
+      --text-light: #ffffff;
+      --text-dark: #111827;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Tahoma, Helvetica, Arial, sans-serif;
+      background: var(--bg-dark-blue);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    a { color: var(--accent-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrapper {
+      flex: 1;
+      display: flex;
+      gap: 2rem;
+      padding: 3rem 6vw;
+      align-items: flex-start;
+    }
+    @media (max-width: 800px) {
+      .wrapper { flex-direction: column; align-items: center; }
+    } 
+
+    .profile-col {
+      flex: 0 0 33%;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .profile-col h1 {
+      font-size: 2.4rem;      
+      margin-bottom: 1.5rem;
+      margin-top: 0rem;      
+    }
+
+    .hub {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: var(--circle-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .3);
+  margin-top: -1rem;
+  overflow: hidden;
+}
+
+.hub img {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg-dark-blue);
+  z-index: 1;
+}
+
+.circular-text {
+  font-weight: 700;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  animation: spin 22s linear infinite;
+  z-index: 0;
+}
+
+
+    .hub-name {
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-align: center;
+      width: 100%;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+
+    .content-col {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  
+  grid-template-rows: repeat(2, 1fr);     
+  gap: 1.2rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%; 
+}
+
+section.card {
+  background: #ffffff;
+  color: var(--text-dark);
+  padding: 1.6rem 1.8rem;            
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .25);
+  font-size: 1rem;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  display: flex;                    
+  flex-direction: column;
+  justify-content: space-between;  
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+    section.card h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    section.card ul,section.card p {
+      flex-grow: 1;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .skills-list { padding-left: 1rem; }
+    .skills-list li.hidden { display: none; }
+    .read-more-btn { background: none; border: none; color: var(--bg-dark-blue); font-weight: 600; cursor: pointer; margin-top: .4rem; }
+    .edit-btn {
+      display: block;
+      background: var(--bg-dark-blue);
+      color: #fff;
+      border: none;
+      padding: .4rem .8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: .6rem auto 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: .95rem;
+      background: var(--bg-dark-blue);
+    }
+
+    .hidden {
+  display: none;
+}
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#skills p {
+  margin: 0.5rem 0;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Helvetica, Arial, sans-serif;
+  background: linear-gradient(to right, #0d47a1, #42a5f5);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body::before {
+  background: linear-gradient(
+    135deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 55%
+  );
+  animation: shine-left-to-right 4s linear infinite;
+}
+
+body::after {
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 55%
+  );
+  animation: shine-right-to-left 4s linear infinite;
+}
+@keyframes shine-left-to-right {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  100% {
+    transform: translate(100%, 100%);
+  }
+}
+
+@keyframes shine-right-to-left {
+  0% {
+    transform: translate(100%, -100%);
+  }
+  100% {
+    transform: translate(-100%, 100%);
+  }
+}
+
+
+  </style>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const toggleBtn = document.getElementById('read-toggle');
+  const hiddenSkills = document.querySelector('.skills-hidden');
+
+  const editSkillsBtn = document.getElementById('edit-skills');
+  editSkillsBtn.addEventListener('click', () => {
+    const currentSkills = [...document.querySelectorAll('#skills p')]
+      .map(p => p.textContent)
+      .join(', ');
+    const input = prompt('Edit your skills (comma-separated):', currentSkills);
+    if (input === null) return;
+
+    const skillsArray = input.split(',').map(s => s.trim()).filter(Boolean);
+    const visibleDiv = document.querySelector('.skills-visible');
+    const hiddenDiv = document.querySelector('.skills-hidden');
+
+    visibleDiv.innerHTML = '';
+    hiddenDiv.innerHTML = '';
+
+    skillsArray.forEach((skill, idx) => {
+      const p = document.createElement('p');
+      p.textContent = skill;
+      if (idx <= 1) visibleDiv.appendChild(p);
+      else hiddenDiv.appendChild(p);
+    });
+
+    hiddenDiv.classList.add('hidden');
+    toggleBtn.textContent = 'Read More';
+  });
+
+  const editCoursesBtn = document.getElementById('edit-courses');
+  editCoursesBtn.addEventListener('click', () => {
+    const currentCourses = [...document.querySelectorAll('#courses-list p')]
+      .map(p => p.textContent)
+      .join(', ');
+    const input = prompt('Edit your courses (comma-separated):', currentCourses);
+    if (input === null) return;
+
+    const coursesArray = input.split(',').map(c => c.trim()).filter(Boolean);
+    const courseList = document.getElementById('courses-list');
+    courseList.innerHTML = '';
+    coursesArray.forEach(course => {
+      const p = document.createElement('p');
+      p.textContent = course;
+      courseList.appendChild(p);
+    });
+  });
+});
+</script>
+
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="profile-col">
+      <h1>Chaitanya Nitawe</h1>
+      <div class="hub">
+        <img src="Chaitanya.jpg" alt="Chaitanya Nitawe">
+        <svg class="circular-text" viewBox="0 0 320 320">
+          <defs>
+            <path id="circlePath" d="M160 160 m -140,0 a 140,140 0 1,1 280,0 a 140,140 0 1,1 -280,0" />
+          </defs>
+          <text textLength="880" lengthAdjust="spacing">
+            <textPath href="#circlePath">• Electrical Engineering • IIT Kanpur • Ichalkaranji, Maharashtra </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <section class="card" id="about" style="margin-top: 2rem;">
+        <h2>About Me</h2>
+        <p>I am a second-year undergraduate at IIT Kanpur pursuing Electrical Engineering. Passionate about problem-solving and visual storytelling, I enjoy crafting short films and decoding complex puzzles. I’m always exploring new tech and love collaborating on creative projects.</p>
+      </section>
+    </div>
+
+    <div class="content-col">
+      <section class="card" id="hobbies">
+        <h2>Hobbies</h2>
+          <p>Solving puzzles</p>
+          <p>Watching movies</p>
+          <p>Making short films</p>
+          <p>Reading myth-fictional books<p>
+      </section>
+
+      <section class="card" id="projects">
+  <h2>Projects</h2>
+  <p>Portfolio Website – A personal site built with HTML,CSS,JavaScript.</p>
+  <p>Mind's Mirror : CNN along with feature extraction techniques to classify brain signals.</p>
+  <p>AI101 : Learned basic of ML from SVM to Transformers.</p>
+</section>
+
+<section class="card" id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills-visible">
+    <p>HTML</p>
+    <p>CSS</p>
+  </div>
+
+  <div class="skills-hidden hidden">
+    <p>JavaScript</p>
+    <p>Python</p>
+    <p>Git</p>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+    <button id="read-toggle" class="read-more-btn">Read More</button>
+  </div>
+</section>
+
+<section class="card" id="courses">
+  <h2>Courses</h2>
+  <div id="courses-list">
+    <p>CS771 : Introduction to ML</p>
+    <p>ESO207 : DSA</p>
+    <p>EE708 : Fundamentals of ML/AI</p>
+    <p>ESC111/2 : Fundamentals of Programming</p>
+  </div>
+  <button id="edit-courses" class="edit-btn" style="align-self: flex-end;">Edit</button>
+</section>
+
+
+
+  <footer>
+    <a href="https://github.com/Chaitanyanitawe" target="_blank">GitHub</a> |
+    <a href="https://www.instagram.com/chaitanyanitawe_09/" target="_blank">Instagram</a> |
+    <a href="mailto:chaitanyanitawe09@gmail.com">chaitanyanitawe09@gmail.com</a> |
+    <a href="https://www.linkedin.com/in/chaitanya-nitawe-1569181aa/" target="_blank">LinkedIn</a>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('read-toggle');
+  const hiddenSkills = document.querySelector('.skills-hidden');
+
+  toggleBtn.addEventListener('click', () => {
+    const isHidden = hiddenSkills.classList.contains('hidden');
+
+    if (isHidden) {
+      hiddenSkills.classList.remove('hidden');
+      toggleBtn.textContent = 'Read Less';
+    } else {
+      hiddenSkills.classList.add('hidden');
+      toggleBtn.textContent = 'Read More';
+    }
+  });
+
+    const editBtn = document.getElementById('edit-skills');
+    editBtn.addEventListener('click', () => {
+      const input = prompt('Enter your skills separated by commas:', '');
+      if (input === null) return;
+      skillsList.innerHTML = '';
+      input.split(',').map(s => s.trim()).filter(Boolean).forEach((skill, idx) => {
+        const li = document.createElement('li');
+        li.textContent = skill;
+        if (idx > 1) li.classList.add('hidden');
+        skillsList.appendChild(li);
+      });
+      readMoreBtn.textContent = 'Read More';
+    });
+  </script>
+</body>
+</html>
